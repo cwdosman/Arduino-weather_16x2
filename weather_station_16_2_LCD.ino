@@ -29,7 +29,6 @@ const int buttonLED = 6; //ButtonLED (LOW= LED an / HIGH= LED aus
 //--------------------------------------------------------------------------------------------
 
 void setup() {
-  // put your setup code here, to run once:
   //Serial.begin(9600); //für debug only
   pinMode(lightbutton, INPUT);
   pinMode(buttonLED, OUTPUT);
@@ -70,6 +69,7 @@ void loop() {
 void printData() {
   unsigned long currentMillis = millis();
 
+if (buttonLED <> HIGH) { // nur ausführen wenn Display an (LED ist invertiert auf Button)
   if (currentMillis - previousMillis >= interval) {
 
     lcd.setCursor(0, 0);
@@ -82,6 +82,7 @@ void printData() {
     lcd.print(bme.readPressure() / 100.0F);
     lcd.print("hPa");
     previousMillis = currentMillis;
+    }
   }
 }
 
