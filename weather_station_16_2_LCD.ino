@@ -69,7 +69,6 @@ void loop() {
 void printData() {
   unsigned long currentMillis = millis();
 
-if (buttonLED <> HIGH) { // nur ausführen wenn Display an (LED ist invertiert auf Button)
   if (currentMillis - previousMillis >= interval) {
 
     lcd.setCursor(0, 0);
@@ -82,7 +81,6 @@ if (buttonLED <> HIGH) { // nur ausführen wenn Display an (LED ist invertiert a
     lcd.print(bme.readPressure() / 100.0F);
     lcd.print("hPa");
     previousMillis = currentMillis;
-    }
   }
 }
 
