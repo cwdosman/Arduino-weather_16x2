@@ -69,7 +69,7 @@ void loop() {
 
 void printData() {
   unsigned long currentMillis = millis();
-
+if (buttonLED == HIGH) {
   if (currentMillis - previousMillis >= interval) {
 
     lcd.setCursor(0, 0);
@@ -82,6 +82,7 @@ void printData() {
     lcd.print(bme.readPressure() / 100.0F);
     lcd.print("hPa");
     previousMillis = currentMillis;
+    }
   }
 }
 
