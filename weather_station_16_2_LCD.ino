@@ -69,7 +69,7 @@ void loop() {
 
 void printData() {
   unsigned long currentMillis = millis();
-if (buttonLED == HIGH) {
+if (buttonLED == HIGH) { // Für OLED Display
   if (currentMillis - previousMillis >= interval) {
 
     lcd.setCursor(0, 0);
